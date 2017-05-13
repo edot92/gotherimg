@@ -25,7 +25,7 @@ func GetImageValue(c *gin.Context) {
 	pointx, _ := strconv.Atoi(c.Param("pointx"))
 	pointy, _ := strconv.Atoi(c.Param("pointy"))
 	message := "pointx:" + strconv.Itoa(pointx) + " dan pointy :" + strconv.Itoa(pointy)
-	imgfile, err := os.Open("assets/tes.jpg")
+	imgfile, err := os.Open("static/tes.jpg")
 
 	if err != nil {
 		fmt.Println("img.jpg file not found!")

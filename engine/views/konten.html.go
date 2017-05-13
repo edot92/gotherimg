@@ -8,11 +8,19 @@ import "bytes"
 func HalamanRender(dataInterface map[string]string, buffer *bytes.Buffer) {
 	buffer.WriteString(`<!DOCTYPE html>
 
+<!--
+Website System 	  : Thermal Imaging Client Coluding
+Start Develop on  : 13 Mei 2017
+Develop by		  : Edy Prasetiyo
+Contact Developer : edyprasetiyoo@gmail.com
+Facebook          : https://www.facebook.com/eddot.fu
+Phone 			  : 082210160003 & WA: 083876989317
+-->
+
 <html lang="en">
 
 	<head>
-		<!--guide template http://client-demo.in/admin/docs/#basics/sidebar.horizontal-->
-		<!--http://ace.jeka.by/login.html-->
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
 		<title> SAMPLE</title>
@@ -216,10 +224,7 @@ func HalamanRender(dataInterface map[string]string, buffer *bytes.Buffer) {
 
 	buffer.WriteString(`
 				<!-- Latest compiled and minified CSS -->
-				<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
 
-				<!-- Latest compiled and minified JavaScript -->
-				<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
 
 				<style>
 					.header-site {
@@ -350,8 +355,8 @@ func HalamanRender(dataInterface map[string]string, buffer *bytes.Buffer) {
             $('#cross').css('visibility', "visible");
             paramx = (pos_x / 3).toFixed(0);
             paramy = (pos_y / 3).toFixed(0);
-            $('#form_x').attr('value', paramx);
-            $('#form_y').attr('value', paramy);
+            $('#form_x').attr('value', paramx + "pixel");
+            $('#form_y').attr('value', paramy + "pixel");
             requestColor(paramx, paramy)
         }
 
@@ -388,8 +393,8 @@ func HalamanRender(dataInterface map[string]string, buffer *bytes.Buffer) {
                 <div class="panel-body" style="padding-top: 15px;padding-left: 0px;">
                     <div class="form-horizontal">
                         <form name="pointform" method="post">
-                            <div id="pointer_div" onclick="point_it(event)" width='100%' height='100%' style="  background-size:cover;background-repeat:no-repeat;background-position: center center;background-image:url('static/tes2.jpg');width:240px;height:240px;">
-                                <img src="http://www.emanueleferonato.com/images/point.gif" id="cross" style="position:relative;visibility:hidden;z-index:2;"></img>
+                            <div id="pointer_div" onclick="point_it(event)" width='100%' height='100%' style="  background-size:cover;background-repeat:no-repeat;background-position: center center;background-image:url('static/tes.jpg');width:240px;height:240px;">
+                                <img src="static/point.gif" id="cross" style="position:relative;visibility:hidden;z-index:2;"></img>
                         </form>
                         </div>
                     </div>
@@ -400,8 +405,8 @@ func HalamanRender(dataInterface map[string]string, buffer *bytes.Buffer) {
             <div class="panel panel-primary">
                 <div class="panel-heading">Nilai Real Point Gambar</div>
                 <div class="panel-body">
-                    Pointer x = <input type="text" id="form_x" name="form_x" size="4" /> - y = <input type="text" id="form_y"
-                        name="form_y" size="4" />
+                    Pointer x = <input type="text" id="form_x" name="form_x" size="8" />
+                    <br> Pointer y = <input type="text" id="form_y" name="form_y" size="8" />
                     <br>
                     <pre id="hex"></pre>
                     <pre id="rgb"></pre>
@@ -657,24 +662,76 @@ func HalamanRender(dataInterface map[string]string, buffer *bytes.Buffer) {
                     <form class="form-horizontal" action="#">
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="">Modem Selected :</label>
-                            <div class="col-sm-6">
-                                <select class="form-control">
-                            <option value="" selected> HUAWEI ZTE</option>
+                            <div class="col-sm-8">
+                                <div class="input-group input-group-sm">
+                                    <select class="form-control">
+                            <option value="" selected=""> HUAWEI ZTE</option>
                             </select>
+
+                                    <span class="input-group-btn"><button type="button" class="btn btn-info">
+																			<span class="ace-icon fa fa-refresh icon-on-right bigger-110"></span>                                    Refresh</button>
+                                    </span><span class="input-group-btn">
+    <button type="button" class="btn btn-primary">
+																			<span class="ace-icon fa fa-save icon-on-right bigger-110">
+                                                                                </span>SIMPAN</button>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="hr hr-24"></div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Username :</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="" value="wap" placeholder="Enter">
                             </div>
                         </div>
-                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Password :</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="" value="wap123" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">APN :</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="" value="telkomesel" placeholder="Enter ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Dial Number :</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="" value="*99#" placeholder="Enter ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-12">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>Simpan Pengaturan APN</button>
+                            </div>
+                        </div>
+                        <div class="hr hr-24"></div>
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="">Command Modem :</label>
-                            <div class="col-sm-6">
-                                <select class="form-control">
-                            <option value="" selected>Cek Pulsa</option>
+                            <div class="col-sm-8">
+                                <div class="input-group input-group-sm">
+                                    <select class="form-control">
+                            <option value="" selected="">Cek Pulsa</option>
+                            <option value="" selected="">Cek Signal</option>
+                            <option value="" selected="">Cek Internet</option>
                             </select>
+                                    <span class="input-group-btn">
+    <button type="button" class="btn btn-primary">
+																			<span class="ace-icon fa fa-send icon-on-right bigger-110">
+                                                                                </span>Kirim</button>
+                                    </span>
+                                </div>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="">Response :</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 <textarea rows="4" cols="10" class="form-control"></textarea>
                             </div>
                         </div>

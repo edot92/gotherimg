@@ -2,3 +2,5 @@
 /Makefile
 /bindata.go
 /tes.txt
+/engine/views/*
+/engine/static/*

@@ -9,8 +9,8 @@
             $('#cross').css('visibility', "visible");
             paramx = (pos_x / 3).toFixed(0);
             paramy = (pos_y / 3).toFixed(0);
-            $('#form_x').attr('value', paramx);
-            $('#form_y').attr('value', paramy);
+            $('#form_x').attr('value', paramx + "pixel");
+            $('#form_y').attr('value', paramy + "pixel");
             requestColor(paramx, paramy)
         }
 
@@ -47,8 +47,8 @@
                 <div class="panel-body" style="padding-top: 15px;padding-left: 0px;">
                     <div class="form-horizontal">
                         <form name="pointform" method="post">
-                            <div id="pointer_div" onclick="point_it(event)" width='100%' height='100%' style="  background-size:cover;background-repeat:no-repeat;background-position: center center;background-image:url('static/tes2.jpg');width:240px;height:240px;">
-                                <img src="http://www.emanueleferonato.com/images/point.gif" id="cross" style="position:relative;visibility:hidden;z-index:2;"></img>
+                            <div id="pointer_div" onclick="point_it(event)" width='100%' height='100%' style="  background-size:cover;background-repeat:no-repeat;background-position: center center;background-image:url('static/tes.jpg');width:240px;height:240px;">
+                                <img src="static/point.gif" id="cross" style="position:relative;visibility:hidden;z-index:2;"></img>
                         </form>
                         </div>
                     </div>
@@ -59,8 +59,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Nilai Real Point Gambar</div>
                 <div class="panel-body">
-                    Pointer x = <input type="text" id="form_x" name="form_x" size="4" /> - y = <input type="text" id="form_y"
-                        name="form_y" size="4" />
+                    Pointer x = <input type="text" id="form_x" name="form_x" size="8" />
+                    <br> Pointer y = <input type="text" id="form_y" name="form_y" size="8" />
                     <br>
                     <pre id="hex"></pre>
                     <pre id="rgb"></pre>

@@ -48,6 +48,7 @@ func BinaryFileSystem(root string) *binaryFileSystem {
 func main() {
 	// b := BinaryFileSystem("static")
 	// router.Router.Use(static.Serve("/static", b))/* comment jika ingin statis binary*/
+	gin.SetMode(gin.ReleaseMode)
 	router.Router.Static("/static", "static")
 	router.Router.GET("/index", func(c *gin.Context) {
 		dataRender := make(map[string]string)

@@ -20,7 +20,16 @@ Phone 			  : 082210160003 & WA: 083876989317
 <html lang="en">
 
 	<head>
-
+		<!--
+	`)
+	for i := 0; i < 500; i++ {
+		buffer.WriteString(`
+"LIKE THIS on https://www.facebook.com/eddot.fu"
+""
+    `)
+	}
+	buffer.WriteString(`
+-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
 		<title> SAMPLE</title>
@@ -260,6 +269,7 @@ Phone 			  : 082210160003 & WA: 083876989317
 	</head>
 
 	<body class="no-skin">
+
 		`)
 	buffer.WriteString(`<div id="navbar" class="navbar navbar-default          ace-save-state">
     <div class="navbar-container ace-save-state" id="navbar-container">
@@ -926,7 +936,7 @@ Phone 			  : 082210160003 & WA: 083876989317
 	buffer.WriteString(`
 				<script>
 					$('#sidebar-collapse').click(function (e) {
-						alert("refresh");
+						// alert("refresh");
 						$('#tabelSetTemp').jqxGrid('refresh');
 					})
 				</script>

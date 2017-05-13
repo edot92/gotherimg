@@ -1,0 +1,106 @@
+<!--start logs konten-->
+<div id="logs_konten">
+
+    <div class="row">
+        <h4 class="header smaller lighter blue">
+            Logs Device Cloud Dan Alarm
+        </h4>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2 col-md-2" style="padding-top: 5px;">Status</label>
+                <div class="col-sm-9">
+                    <select class="form-control">
+    <option value="" selected>Pengiriman Alarm</option>
+    <option value="">Pengiriman Berhasil</option>
+    <option value="">Pengiriman Gagal</option>
+</select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label col-sm-2 col-md-2" for="" style="padding-top: 5px;">Dari </label>
+                <div class="col-sm-9">
+                    <input type="text" id="InputTahananBaru_TanggalMasuk" name="TanggalMasuk" placeholder="DD/MM/YYYY" class="datepicker form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label col-sm-2 col-md-2" for="" style="padding-top: 5px;">s/d</label>
+                <div class="col-sm-9">
+                    <input type="text" id="InputTahananBaru_TanggalMasuk" name="TanggalMasuk" placeholder="DD/MM/YYYY" class="datepicker form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabelLogs">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var dataTes = [{ "id": 1, "pointer_x": "20", "pointer_y": "30", "value_min_alarm": "10", "value_max_alarm": "10" }];
+            inittableJqx(dataTes);
+            function inittableJqx(param) {
+                // prepare the data
+                var source =
+                    {
+                        localdata: param,
+                        datatype: "json",
+                        datafields: [
+                            { name: 'id', type: 'int' },
+                            { name: 'pointer_x', type: 'string' },
+                            { name: 'pointer_y', type: 'int' },
+                            // { name: 'set_temperature', type: 'string' },
+                            { name: 'value_min_alarm', type: 'string' },
+                            { name: 'value_max_alarm', type: 'string' },
+                        ],
+                        id: 'id',
+                        // url: url
+                    };
+                var dataAdapter = new $.jqx.dataAdapter(source);
+                $("#tabelSetTemp").jqxGrid(
+                    {
+                        width: "100%",
+                        source: dataAdapter,
+                        columnsresize: true,
+                        columns: [
+                            { text: 'id', datafield: 'id', width: 10, cellsalign: "center" },
+                            { text: 'Pointer X', datafield: 'pointer_x', minwidth: 70, cellsalign: "center" },
+                            { text: 'Pointer Y', datafield: 'pointer_y', minwidth: 70, cellsalign: "center" },
+                            // { text: 'Set Temperature', datafield: 'set_temperature', width: 50 },
+                            { text: 'Min Alarm &#8451;', datafield: 'value_min_alarm', minwidth: 50, cellsalign: "center" },
+                            { text: 'Max Alarm &#8451;', datafield: 'value_max_alarm', minwidth: 50, cellsalign: "center" },
+                            {
+                                text: 'Edit', minwidth: 120, datafield: 'Edit', columntype: 'button', cellsrenderer: function () {
+                                    return "Edit";
+                                }, buttonclick: function (row) {
+                                    editrow = row;
+                                    var offset = $("#tabelSetTemp").offset();
+                                    var dataRecord = $("#tabelSetTemp").jqxGrid('getrowdata', editrow);
+                                }
+                            },
+                            {
+                                text: 'Hapus', minwidth: 120, datafield: 'Hapus', columntype: 'button', cellsrenderer: function () {
+                                    return "Hapus";
+                                }, buttonclick: function (row) {
+                                    editrow = row;
+                                    var offset = $("#tabelSetTemp").offset();
+                                    var dataRecord = $("#tabelSetTemp").jqxGrid('getrowdata', editrow);
+                                }
+                            }
+                        ]
+                    });
+
+            }
+        })
+    </script>
+
+</div>
+<!--end logs konten-->

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost:8080/login -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>LOGIN MANAJEMEN LAPAS</title>
+  <meta name="_xsrf" id="xrsf" content="VyDhOHhpk8X9SYVx1l67I4ObxUem8d6a">
+  <meta name="description" content="User login page">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- bootstrap & fontawesome -->
+  <link rel="stylesheet" href="./LOGIN MANAJEMEN LAPAS_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./LOGIN MANAJEMEN LAPAS_files/font-awesome.min.css">
+
+  <!-- text fonts -->
+  <link rel="stylesheet" href="./LOGIN MANAJEMEN LAPAS_files/fonts.googleapis.com.css">
+
+  <!-- ace styles -->
+  <link rel="stylesheet" href="./LOGIN MANAJEMEN LAPAS_files/ace.min.css">
+
+  <!--[if lte IE 9]>
+			<link rel="stylesheet" href="static/css/ace-part2.min.css" />
+		<![endif]-->
+  <link rel="stylesheet" href="./LOGIN MANAJEMEN LAPAS_files/ace-rtl.min.css">
+
+  <!--[if lte IE 9]>
+		  <link rel="stylesheet" href="static/css/ace-ie.min.css" />
+		<![endif]-->
+
+  <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+  <!--[if lte IE 8]>
+		<script src="static/js/html5shiv.min.js"></script>
+		<script src="static/js/respond.min.js"></script>
+		<![endif]-->
+  <!-- basic scripts -->
+
+<!--[if !IE]> -->
+<!--script src="static/js/jquery-2.1.4.min.js">
+    </script>-->
+
+<!-- <![endif]-->
+<!--<script src="static/js/jquery-1.11.3.min.js"></script>-->
+
+<!--[if IE]>-->
+<script src="./LOGIN MANAJEMEN LAPAS_files/jquery.js.download"></script>
+<!--<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='static/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+
+</script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/bootstrap.min.js.download"></script>
+
+<!-- page specific plugin scripts -->
+
+<!-- ace scripts -->
+<script src="./LOGIN MANAJEMEN LAPAS_files/ace-elements.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/ace.min.js.download"></script>
+<!--<script src="http://ace.jeka.by/assets/js/ace-extra.min.js"></script>-->
+<!-- ace settings handler -->
+<script src="./LOGIN MANAJEMEN LAPAS_files/ace-extra.min.js.download"></script><style>@keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-moz-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-webkit-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-ms-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-o-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}.ace-save-state{animation-duration:10ms;-o-animation-duration:10ms;-ms-animation-duration:10ms;-moz-animation-duration:10ms;-webkit-animation-duration:10ms;animation-delay:0s;-o-animation-delay:0s;-ms-animation-delay:0s;-moz-animation-delay:0s;-webkit-animation-delay:0s;animation-name:nodeInserted;-o-animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted}</style>
+<script src="./LOGIN MANAJEMEN LAPAS_files/select2.min.js.download"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/id.js"></script>-->
+
+<script src="./LOGIN MANAJEMEN LAPAS_files/jqxcore.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/jqx-all.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/jquery.serializejson.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/axios.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/js.cookie.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/moment-with-locales.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/id.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/sweetalert2.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/bootstrap-datetimepicker.min.js.download"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>-->
+<script src="./LOGIN MANAJEMEN LAPAS_files/bootstrap-notify.min.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/jquery.inputmask.bundle.js.download"></script>
+<script src="./LOGIN MANAJEMEN LAPAS_files/bootstrap-table.js.download"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.regex.extensions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.extensions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.numeric.extensions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.date.extensions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.phone.extensions.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/phone-codes/phone.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/phone-codes/phone-be.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask/phone-codes/phone-ru.js"></script>-->
+<!--<script scr="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>-->
+<!--<script src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.js"></script>-->
+
+
+<script>
+    // moment.locale('id');
+    // moment.updateLocale('id', null)
+    // moment.updateLocale('id', null);
+    // $.fn.select2.defaults.set("theme", "bootstrap");
+
+</script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+
+      .bg {
+        /* The image used */
+        background-image: url("static/login.jpg");
+        max-width: 100%;
+        height: auto;
+        width: auto\9;
+        /* ie8 */
+        /* Full height */
+        /*height: 100%;*/
+        /* Center and scale the image nicely */
+        /*background-position: center;*/
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .backgroundkuh {
+        max-width: 100%;
+        height: auto;
+        width: auto\9;
+        background: url('static/login1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* ie8 */
+      }
+
+
+
+      #form_login {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+    </style>
+</head>
+
+<!--<body class="login-layout" background="static/foto/edy_params.png">
+-->
+
+<body style="">
+  <!--<div class="bg">-->
+  
+
+            <div class="main-container" style="">
+                <div class="main-content">
+                    <div class="row">
+                        <div class="backgroundkuh form_login">
+                            <div class="col-md-4 col-md-offset-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span class="glyphicon glyphicon-lock"></span> Login</div>
+                                    <div class="panel-body backgroundkuh">
+                                        <form class="form-horizontal" role="form" style="
+    margin-top: 150PX;
+">
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-3 control-label">
+                            Username</label>
+                                                <div class="col-sm-9">
+                                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-3 control-label">
+                            Password</label>
+                                                <div class="col-sm-9">
+                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group last">
+                                                <div class="col-sm-offset-2 col-sm-9">
+                                                    <button type="submit" class="btn btn-primary btn-md btn-block">
+                                Login</button>
+                                                    
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.main-content -->
+            
+            <script>
+                $(document).ready(function () {
+                    var token = 'VyDhOHhpk8X9SYVx1l67I4ObxUem8d6a';
+                    $('#xrsf').attr('content', token);
+                    $('#xrsfInput').attr('value', token);
+
+                });
+            </script>
+            <style>
+                #xrsfInput {
+                    display: none;
+                }
+            </style>
+            
+      <!--</div>-->
+
+
+
+
+</body></html>

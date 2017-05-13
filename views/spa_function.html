@@ -1,0 +1,91 @@
+<script type="text/javascript">
+    var namaHalaman = ['sumber_gambar', 'logs_konten', 'pengaturan_cloud', 'settingreminder'];
+
+    $(document).ready(function () {
+        var token = 'pBBA8t6Rvve1Fv5fpd5Kv2TOX1T7wf68';
+        $('#xrsf').attr('content', token);
+        $('#xrsfInput').attr('value', token);
+        for (var i = 0; i < namaHalaman.length; i++) {
+            $('#' + namaHalaman[i]).css('display', 'none');
+        }
+        $("#navbarmenu1 li a").click(function (event) {
+
+            Cookies.remove('tabaktif');
+            var href_klikname = $(this).attr('href');
+            event.preventDefault();
+            if (href_klikname == "#logout") {
+                document.cookie = 'jwt' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+                location.reload();
+                return;
+            }
+            $("#navbarmenu1 .active").removeClass('active');
+            $(this).parent().addClass('active');
+            href_klikname = href_klikname.replace('#', '');
+            console.log(href_klikname);
+            status = gotoTab(href_klikname)
+            if (status == true) {
+
+                console.log("tes")
+            }
+        });
+        var data = Cookies.get('tabaktif');
+        var dataResFlashCokie = Cookies.getJSON('response_flash_json');
+        // console.log("tabaktif =" + data);
+        if (data == "inputtahananbaru") {
+            gotoTab(data);
+
+        }
+        // console.log(dataResFlashCokie)
+        if (dataResFlashCokie != undefined) {
+            if (dataResFlashCokie.status == "success") {
+                swal(
+                    "Berhasil",
+                    dataResFlashCokie.message,
+                    "success"
+                )
+            } else if (dataResFlashCokie.status == "failed") {
+                swal(
+                    "Gagal",
+                    dataResFlashCokie.message,
+                    "error"
+                )
+            }
+
+        }
+        Cookies.remove('tabaktif');
+        Cookies.remove('response_flash_json');
+
+        function gotoTab(href_klikname) {
+            var status = false;
+            href_klikname = href_klikname.toLowerCase();
+            for (var i = 0; i < namaHalaman.length; i++) {
+                var namaHal = namaHalaman[i];
+                if (href_klikname == namaHal) {
+                    $('#' + namaHalaman[i]).css('display', 'inline');
+                    status = true;
+                } else {
+                    $('#' + namaHalaman[i]).css('display', 'none');
+                    // $('#navbarmenu1 > li').removeClass("active");
+
+                }
+            }
+            return status;
+        }
+    });
+                // jQuery(function ($) {
+
+                // })
+
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $('.datepicker').datetimepicker({
+            format: "DD-MM-YYYY",
+            locale: 'id'
+        });
+        $(".datepicker").inputmask("99-99-9999", { "placeholder": "DD-MM-YYYY" });
+    });
+
+</script>

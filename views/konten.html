@@ -1,0 +1,19 @@
+<%~ "index.html" %>
+
+
+    <%: func HalamanRender( dataInterface map[string]string,buffer *bytes.Buffer)  %>
+        <%@ konten { %>
+
+            <%+ "partials/sidebar.html" %>
+                <div class="main-content">
+                    <div class="main-content-inner">
+                        <div class="page-content">
+                            <%+ "fckonten/sumber_gambar.html" %>
+                                <%+ "fckonten/logs_konten.html" %>
+                                    <%+ "fckonten/pengaturan_cloud.html" %>
+                                        <!-- /.page-content -->
+                        </div>
+                    </div>
+                </div>
+                <%+ "spa_function.html" %>
+                    <% } %>
